@@ -5,10 +5,7 @@ function myFunction (userInput){
   for (var index = 0; index < userInput.length; index += 1){
       if (!vowelArray.includes(userInput[0])){
            userInput.push(userInput.shift());
-           userInput.push("ay");
-           userInput= userInput.join("");
-           return userInput;
-     } else if (vowelArray.includes(userInput[0])){
+     } else {
          userInput.push("ay");
          userInput= userInput.join("");
          return userInput;
