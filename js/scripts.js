@@ -4,17 +4,19 @@
 $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
-    var userInput = $("input#english").val().toLowerCase();
-    var userArray = userInput.split('');
+    var userInput = $("input#english").val().toLowerCase().split("");
+    // var userArray = userInput.split('');
 
-    if ((userArray[0] === "a") || (userArray[0] === "e")|| (userArray[0] === "i")|| (userArray[0] === "o")|| (userArray[0] === "u")){
-      userArray = userArray + "ay";
-      alert(userArray);
+
+    if ((userInput[0] === "a") || (userInput[0] === "e")|| (userInput[0] === "i")|| (userInput[0] === "o")|| (userInput[0] === "u")){
+      userInput = userInput + "ay";
     } else {
-    return false;
+      userInput.push(userInput.shift());
+
+      alert(userInput);
     }
   });
 });
 
 // hello
-// userArray[i];
+// userInput[i];
